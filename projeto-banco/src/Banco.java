@@ -76,13 +76,18 @@ public class Banco {
 	}
 	
 	public void imprimirInfosClientesMesmoNome(String nome) {
+		int count=0;
 		for(int i=0;i<this.contas.size();i++)
 		{
 			if(this.contas.get(i).getCliente().getNome()==nome)
 			{
 				this.contas.get(i).imprimirInfos();
+				count++;
 			}	
 		}
-		System.out.println("Cliente nao encontrado");
+		if(count==0)
+		{
+			System.out.println("Nenhum cliente encontrado");
+		}
 	}
 }
